@@ -13,6 +13,7 @@ router.post("/signin", (req, res, next) => {
       //create a token
       const token = jwt.sign({}, RSA_KEY_PRIVATE, {
         algorithm: "RS256",
+        expiresIn: "15s",
         subject: user._id.toString(),
       });
       res.status(200).json(token); //retourne a l'user un status 200 et la cle token
@@ -36,4 +37,5 @@ router.post("/signup", (req, res) => {
     res.status(200).json("signup ok !");
   });
 });
+
 module.exports = router;

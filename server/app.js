@@ -26,7 +26,7 @@ mongoose.connect(
   }
 );
 
-app.use(index);
+app.use(index); //Fichier rooting principale
 
 app.use(express.static(path.join(__dirname, "../public")));
 
